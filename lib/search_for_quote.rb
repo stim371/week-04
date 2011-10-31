@@ -10,16 +10,12 @@
 
 def search_for_quote(fileinfo)
 
-  quotes = all_quotes(fileinfo[:file])
+  list_of_quotes = all_quotes(fileinfo[:file])
   fileinfo.delete(:file)
   
-  results =  fileinfo.map {|search_pair| quotes.select {|line| line =~ search_string(*search_pair) }}.flatten
+  results =  fileinfo.map {|search_pair| list_of_quotes.select {|line| line =~ search_string(*search_pair) }}.flatten
 
-  if results.empty?
-    quotes
-  else
-    results
-  end
+  results.empty? ? list_of_quotes : results
 
 end
 

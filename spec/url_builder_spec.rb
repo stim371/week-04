@@ -36,8 +36,8 @@ describe "#url_builder" do
     
   end
   
-  it "should fail" do
-    fail
-  end
+  # it "should fail" do
+  #   fail
+  # end #this will always fail, so I commented it out.
   
 end
